@@ -1,0 +1,5 @@
+C:\Users\vmadmin\RiderProjects\RPS_Project_AM\RPS_Project_AM\bin\Debug\RPS_Project_AM.exe
+C:\Users\vmadmin\RiderProjects\RPS_Project_AM\RPS_Project_AM\bin\Debug\RPS_Project_AM.pdb
+C:\Users\vmadmin\RiderProjects\RPS_Project_AM\RPS_Project_AM\obj\Debug\RPS_Project_AM.csprojResolveAssemblyReference.cache
+C:\Users\vmadmin\RiderProjects\RPS_Project_AM\RPS_Project_AM\obj\Debug\RPS_Project_AM.exe
+C:\Users\vmadmin\RiderProjects\RPS_Project_AM\RPS_Project_AM\obj\Debug\RPS_Project_AM.pdb
