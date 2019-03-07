@@ -5,21 +5,21 @@ namespace RPS_Project_AM
 {
     public class RPSGame
     {
-        private readonly string[] MoveNames = {"Rock", "Paper", "Scissors", "Spock", "Zombie", "Lizard", "Gun"};
+        private readonly string[] Objects = {"Rock", "Paper", "Scissors", "Spock", "Zombie", "Lizard", "Gun"};
         private readonly Random r;
-        private string computersChoice;
+        private string cChoice;
 
         public RPSGame()
         {
             r = new Random();
         }
 
-        public string ComputersChoice
+        public string CChoice
         {
             get
             {
-                computersChoice = MoveNames[r.Next(7)];
-                return computersChoice;
+                cChoice = Objects[r.Next(7)];
+                return cChoice;
             }
         }
 
@@ -46,34 +46,31 @@ namespace RPS_Project_AM
             }
         }
 
-        private string Result(string Player, string Pwin1, string Pwin2, string Pwin3, string Plose1, string Plose2,
-            string Plose3)
+        private string Result(string Player, string Playerwin1, string Playerwin2, string Playerwin3, string Playerlose1, string Playerlose2,
+            string Playerlose3)
         {
-            var Pwins = Pwin1 + Pwin2 + Pwin3;
-            var Plosses = Plose1 + Plose2 + Plose3;
-           
-            
-            if (computersChoice == Pwin1)
+
+            if (cChoice == Playerwin1)
             {
                 return "win";
             }
-            else if (computersChoice == Pwin2)
+            else if (cChoice == Playerwin2)
             {
                 return "win";
             }
-            else if (computersChoice == Pwin3)
+            else if (cChoice == Playerwin3)
             {
                 return "win";
             }
-            else if (computersChoice == Plose1)
+            else if (cChoice == Playerlose1)
             {
                 return "lose";
             }
-            else if (computersChoice == Plose2)
+            else if (cChoice == Playerlose2)
             {
                 return "lose";
             }
-            else if (computersChoice == Plose3)
+            else if (cChoice == Playerlose3)
             {
                 return "lose";
             }

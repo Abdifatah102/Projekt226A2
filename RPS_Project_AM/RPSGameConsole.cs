@@ -3,7 +3,7 @@ namespace RPS_Project_AM
 {
     public class RPSGameConsole
     {
-                public void Go()
+        public void Go()
         {
             var game = new RPSGame();
             int wins, draws, losses, round;
@@ -16,74 +16,76 @@ namespace RPS_Project_AM
 
             for (;;)
             {
-                computersChoice = game.ComputersChoice;
-                string playersChoice = null;
+                computersChoice = game.CChoice;
+                string pChoice = null;
                 do
                 {
                     Console.Write(
-                        "Enter r (Rock), p (Paper), s (Scissors), S (Spock), z (Zombie), l (Lizard), g (Gun)" +
+                        "Enter r (Rock), p (Paper), s (Scissors), sp (Spock), z (Zombie), l (Lizard), g (Gun)" +
                         " or Q (Quit) :");
                     var b = Console.ReadLine();
 
                     switch (b)
                     {
                         case "r":
-                            playersChoice = "Rock";
+                            pChoice = "Rock";
                             break;
                         case "p":
-                            playersChoice = "Paper";
+                            pChoice = "Paper";
                             break;
                         case "s":
-                            playersChoice = "Scissors";
+                            pChoice = "Scissors";
                             break;
                         case "sp":
-                            playersChoice = "Spock";
+                            pChoice = "Spock";
                             break;
                         case "z":
-                            playersChoice = "Zombie";
+                            pChoice = "Zombie";
                             break;
                         case "l":
-                            playersChoice = "Lizard";
+                            pChoice = "Lizard";
                             break;
                         case "g":
-                            playersChoice = "Gun";
+                            pChoice = "Gun";
                             break;
                         case "q":
-                            playersChoice = "Quit";
+                            pChoice = "Quit";
+                            Console.WriteLine("\n");
+                            Console.WriteLine("You quit the game: ");
+                            Console.WriteLine("Result: {0} wins, {1} draws, {2} losses", wins, draws, losses);
                             break;
                     }
-                } while (playersChoice == null);
+                } while (pChoice == null);
 
-                if (playersChoice == "Quit") break;
-                result = game.ComparePlays(playersChoice);
+                if (pChoice == "Quit") break;
+                result = game.ComparePlays(pChoice);
                 round++;
                 Console.WriteLine("Round " + round);
                 Console.WriteLine("The computer's choice = " + computersChoice);
-                Console.WriteLine("The player's choice = " + playersChoice);
-
+                Console.WriteLine("The player's choice = " + pChoice);
+                
                 switch (result)
                 {
-                    case "draw":
+                    case "drawn":
                         Console.WriteLine("\n");
-                        Console.WriteLine("***This round is drawn.***");
+                        Console.WriteLine("*** This round is drawn. ***");
                         Console.WriteLine("\n");
                         draws++;
                         break;
                     case "lose":
                         Console.WriteLine("\n");
-                        Console.WriteLine("***Sorry, you lose this round.***");
+                        Console.WriteLine("*** You lost. " + computersChoice + " wins against " + pChoice + " ***");
                         Console.WriteLine("\n");
                         losses++;
                         break;
                     case "win":
                         Console.WriteLine("\n");
-                        Console.WriteLine("***Well done, you win this round.***");
+                        Console.WriteLine("*** You won. " + pChoice + " wins against " + computersChoice + " ***");
                         Console.WriteLine("\n");
                         wins++;
                         break;
                 }
-
-                Console.WriteLine("Status: {0} wins, {1} draws," + "{2} losses", wins, draws, losses);
+                Console.WriteLine("Status: {0} wins, {1} draws, {2} losses", wins, draws, losses);
             }
         }
     }
