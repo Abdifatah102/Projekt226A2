@@ -58,11 +58,11 @@ namespace RPS_Project_AM
                 } while (pChoice == null);
 
                 if (pChoice == "Quit") break;
-                result = game.ComparePlays(pChoice);
+                result = game.Compare(pChoice);
                 round++;
-                Console.WriteLine("Round " + round);
-                Console.WriteLine("The computer's choice = " + computersChoice);
-                Console.WriteLine("The player's choice = " + pChoice);
+                Console.WriteLine("\nRound " + round);
+                Console.WriteLine("The player chose = " + pChoice);
+                Console.WriteLine("The computer chose = " + computersChoice);
                 
                 switch (result)
                 {

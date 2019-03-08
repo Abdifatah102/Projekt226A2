@@ -3,9 +3,10 @@ using System;
 namespace RPS_Project_AM
 
 {
+
     public class RPSGame
     {
-        private readonly string[] Objects = {"Rock", "Paper", "Scissors", "Spock", "Zombie", "Lizard", "Gun"};
+        private readonly string[] Objects = {"Rock", "Paper", "Scissors", "Spock", "Zombie", "Lizard", "Gun"}; // Die Namen von den Objekten
         private readonly Random r;
         private string cChoice;
 
@@ -23,9 +24,9 @@ namespace RPS_Project_AM
             }
         }
 
-        public string ComparePlays(string playersChoice)
+        public string Compare(string playersChoice)
         {
-            switch (playersChoice)
+            switch (playersChoice) //Auswahl vom Spieler
             {
                 case "Rock":
                     return Result("Rock", "Scissors", "Zombie", "Lizard", "Paper", "Spock", "Gun");
@@ -50,34 +51,32 @@ namespace RPS_Project_AM
             string Playerlose3)
         {
 
-            if (cChoice == Playerwin1)
+            if (cChoice == Playerwin1) //
             {
                 return "win";
             }
-            else if (cChoice == Playerwin2)
+
+            if (cChoice == Playerwin2)
             {
                 return "win";
             }
-            else if (cChoice == Playerwin3)
+            if (cChoice == Playerwin3)
             {
                 return "win";
             }
-            else if (cChoice == Playerlose1)
+            if (cChoice == Playerlose1)
             {
                 return "lose";
             }
-            else if (cChoice == Playerlose2)
+            if (cChoice == Playerlose2)
             {
                 return "lose";
             }
-            else if (cChoice == Playerlose3)
+            if (cChoice == Playerlose3)
             {
                 return "lose";
             }
-            else
-            {
-                return "drawn";
-            }
+            return "drawn";
         }
     }
 }
